@@ -24,8 +24,12 @@ while True:
       
       print("Contato adicionado com sucesso!")
       wait_and_clear_screen()
+      
+    case 2:
+      print("--Contatos--")
+      print(*phone_book, sep="\n")
+      wait_and_clear_screen()
     case 6:
       break
-    
     case _:
       print("Opção inválida!")
