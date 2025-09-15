@@ -5,6 +5,14 @@ def wait_and_clear_screen():
   input("")
   os.system('cls' if os.name == "nt" else "clear")
 
+def list_phone_book(phone_book):
+  print("--Contatos--")
+  for index, contact in enumerate(phone_book, start=1):
+    favorite_icon = "☆" if contact.is_favorite else ""
+    print(f"{index} - {contact} {favorite_icon}")
+  return
+
+# -------------------
 phone_book = []
 
 while True:
@@ -26,8 +34,7 @@ while True:
       wait_and_clear_screen()
       
     case 2:
-      print("--Contatos--")
-      print(*phone_book, sep="\n")
+      list_phone_book(phone_book) 
       wait_and_clear_screen()
     case 6:
       break
