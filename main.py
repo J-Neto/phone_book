@@ -1,11 +1,17 @@
 from contact import Contact
+import os
+
+def wait_and_clear_screen():
+  input("")
+  os.system('cls' if os.name == "nt" else "clear")
 
 phone_book = []
 
 while True:
-  print("Agenda Telefônica")
+  print("Agenda Telefônica 🕮")
   option = int(input("1- Adicionar contato\n2- Ver contatos\n3- Favoritar/desfavoritar contato\n4- Ver favoritos\n5- Apagar contato\n6- Sair do programa\nOpção: "))
-
+  os.system('cls' if os.name == "nt" else "clear")
+  
   match option:
     case 1:
       print("--Adicionar contato--")
@@ -15,7 +21,9 @@ while True:
 
       contact = Contact(name, phone_number, email)
       phone_book.append(contact)
+      
       print("Contato adicionado com sucesso!")
+      wait_and_clear_screen()
     case 6:
       break
     
