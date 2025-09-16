@@ -37,6 +37,15 @@ def list_favorites(phone_book):
   for index, contact in enumerate([item for item in phone_book if item.is_favorite]):
     print(f"{index} - {contact}")
 
+def delete_contact(phone_book, contact_index):
+  contact_index = contact_index - 1
+  if contact_index >= 0 and contact_index < len(phone_book):
+    phone_book.pop(contact_index)
+    print(f"Contato removido com sucesso!")
+  else:
+    print("Contato inexistente!")
+  return
+  
 # -------------------
 phone_book = []
 
@@ -72,6 +81,14 @@ while True:
       list_favorites(phone_book)
       wait_and_clear_screen()
 
+    case 5:
+      if (len(phone_book) > 0):
+        list_phone_book(phone_book) 
+        contact_index = int(input("Insira o índice do contato: "))
+        delete_contact(phone_book, contact_index)
+      else:
+        print("Lista vazia!")
+      wait_and_clear_screen()
     case 6:
       break
     case _:
