@@ -12,6 +12,27 @@ def list_phone_book(phone_book):
     print(f"{index} - {contact} {favorite_icon}")
   return
 
+def check_favorite_contact(phone_book, contact_index):
+  contact_index = contact_index - 1
+  if contact_index >= 0 and contact_index < len(phone_book):
+    if phone_book[contact_index].is_favorite:
+      unfavorite_contact(phone_book, contact_index)
+    else:
+      favorite_contact(phone_book, contact_index)
+  else:
+    print("Contato inexistente!")
+  return
+
+def favorite_contact(phone_book, contact_index):
+  phone_book[contact_index].is_favorite = True
+  print(f"Contato {phone_book[contact_index]} favoritado com sucesso!")
+  return
+
+def unfavorite_contact(phone_book, contact_index):
+  phone_book[contact_index].is_favorite = False
+  print(f"Contato {phone_book[contact_index]} desfavoritado com sucesso!")
+  return
+
 # -------------------
 phone_book = []
 
@@ -36,6 +57,12 @@ while True:
     case 2:
       list_phone_book(phone_book) 
       wait_and_clear_screen()
+    case 3:
+      list_phone_book(phone_book) 
+      contact_index = int(input("Insira o índice do contato: "))
+      check_favorite_contact(phone_book, contact_index)
+      wait_and_clear_screen()
+
     case 6:
       break
     case _:
