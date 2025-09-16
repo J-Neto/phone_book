@@ -33,6 +33,10 @@ def unfavorite_contact(phone_book, contact_index):
   print(f"Contato {phone_book[contact_index]} desfavoritado com sucesso!")
   return
 
+def list_favorites(phone_book):
+  for index, contact in enumerate([item for item in phone_book if item.is_favorite]):
+    print(f"{index} - {contact}")
+
 # -------------------
 phone_book = []
 
@@ -57,10 +61,15 @@ while True:
     case 2:
       list_phone_book(phone_book) 
       wait_and_clear_screen()
+    
     case 3:
       list_phone_book(phone_book) 
       contact_index = int(input("Insira o índice do contato: "))
       check_favorite_contact(phone_book, contact_index)
+      wait_and_clear_screen()
+    
+    case 4:
+      list_favorites(phone_book)
       wait_and_clear_screen()
 
     case 6:
