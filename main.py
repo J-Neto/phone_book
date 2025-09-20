@@ -6,10 +6,6 @@ def wait_and_clear_screen():
   input("")
   os.system('cls' if os.name == "nt" else "clear")
 
-def list_favorites(phone_book):
-  for index, contact in enumerate([item for item in phone_book if item.is_favorite]):
-    print(f"{index} - {contact}")
-
 def delete_contact(phone_book, contact_index):
   contact_index = contact_index - 1
   if contact_index >= 0 and contact_index < len(phone_book):
@@ -41,12 +37,10 @@ while True:
       wait_and_clear_screen()
       
     case 2:
-      print("--Contatos--")
       phone_book.list_contacts()
       wait_and_clear_screen()
     
     case 3:
-      print("--Contatos--")
       phone_book.list_contacts()
       contact_index = int(input("Insira o índice do contato: "))
       phone_book.check_favorite_contact(contact_index)
@@ -56,14 +50,14 @@ while True:
       phone_book.list_favorites()
       wait_and_clear_screen()
 
-    # case 5:
-    #   if (len(phone_book) > 0):
-    #     list_phone_book(phone_book) 
-    #     contact_index = int(input("Insira o índice do contato: "))
-    #     delete_contact(phone_book, contact_index)
-    #   else:
-    #     print("Lista vazia!")
-    #   wait_and_clear_screen()
+    case 5:
+      if (len(phone_book.contacts) > 0):
+        phone_book.list_contacts()
+        contact_index = int(input("Insira o índice do contato: "))
+        phone_book.delete_contact(contact_index)
+      else:
+        print("Lista vazia!")
+      wait_and_clear_screen()
     case 6:
       break
     case _:
