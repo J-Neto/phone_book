@@ -16,3 +16,8 @@ Nesse desafio desenvolveremos uma agenda para salvar, editar, deletar e marcar u
 * Deve ser possível marcar/desmarcar um contato como favorito
 * Deve ser possível ver uma lista de contatos favoritos
 * Deve ser possível apagar um contato
+
+### Próximos passos
+
+* Refatorar o código com a classe PhoneBook
+  * Colocar todas as respectivas funções para métodos e atributos
