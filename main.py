@@ -5,15 +5,6 @@ import os
 def wait_and_clear_screen():
   input("")
   os.system('cls' if os.name == "nt" else "clear")
-
-def delete_contact(phone_book, contact_index):
-  contact_index = contact_index - 1
-  if contact_index >= 0 and contact_index < len(phone_book):
-    phone_book.pop(contact_index)
-    print(f"Contato removido com sucesso!")
-  else:
-    print("Contato inexistente!")
-  return
   
 # -------------------
 phone_book = PhoneBook()
