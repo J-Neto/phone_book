@@ -27,3 +27,7 @@ class PhoneBook:
         self.favorite_contact(index)
     else:
       print("Contato inexistente")
+      
+  def list_favorites(self):
+    for index, contact in enumerate([item for item in self.contacts if item.is_favorite]):
+      print(f"{index} - {contact}")

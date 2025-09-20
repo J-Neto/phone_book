@@ -20,7 +20,6 @@ def delete_contact(phone_book, contact_index):
   return
   
 # -------------------
-# phone_book = []
 phone_book = PhoneBook()
 
 while True:
@@ -53,9 +52,9 @@ while True:
       phone_book.check_favorite_contact(contact_index)
       wait_and_clear_screen()
     
-    # case 4:
-    #   list_favorites(phone_book)
-    #   wait_and_clear_screen()
+    case 4:
+      phone_book.list_favorites()
+      wait_and_clear_screen()
 
     # case 5:
     #   if (len(phone_book) > 0):
