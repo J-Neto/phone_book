@@ -1,4 +1,5 @@
 from contact import Contact
+from phone_book import PhoneBook
 import os
 
 def wait_and_clear_screen():
@@ -47,7 +48,8 @@ def delete_contact(phone_book, contact_index):
   return
   
 # -------------------
-phone_book = []
+# phone_book = []
+phone_book = PhoneBook()
 
 while True:
   print("Agenda Telefônica 🕮")
@@ -62,33 +64,33 @@ while True:
       email = input("Insira o email: ")
 
       contact = Contact(name, phone_number, email)
-      phone_book.append(contact)
+      phone_book.add_contact(contact)
       
       print("Contato adicionado com sucesso!")
       wait_and_clear_screen()
       
-    case 2:
-      list_phone_book(phone_book) 
-      wait_and_clear_screen()
+    # case 2:
+    #   list_phone_book(phone_book) 
+    #   wait_and_clear_screen()
     
-    case 3:
-      list_phone_book(phone_book) 
-      contact_index = int(input("Insira o índice do contato: "))
-      check_favorite_contact(phone_book, contact_index)
-      wait_and_clear_screen()
+    # case 3:
+    #   list_phone_book(phone_book) 
+    #   contact_index = int(input("Insira o índice do contato: "))
+    #   check_favorite_contact(phone_book, contact_index)
+    #   wait_and_clear_screen()
     
-    case 4:
-      list_favorites(phone_book)
-      wait_and_clear_screen()
+    # case 4:
+    #   list_favorites(phone_book)
+    #   wait_and_clear_screen()
 
-    case 5:
-      if (len(phone_book) > 0):
-        list_phone_book(phone_book) 
-        contact_index = int(input("Insira o índice do contato: "))
-        delete_contact(phone_book, contact_index)
-      else:
-        print("Lista vazia!")
-      wait_and_clear_screen()
+    # case 5:
+    #   if (len(phone_book) > 0):
+    #     list_phone_book(phone_book) 
+    #     contact_index = int(input("Insira o índice do contato: "))
+    #     delete_contact(phone_book, contact_index)
+    #   else:
+    #     print("Lista vazia!")
+    #   wait_and_clear_screen()
     case 6:
       break
     case _:
