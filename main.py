@@ -6,33 +6,6 @@ def wait_and_clear_screen():
   input("")
   os.system('cls' if os.name == "nt" else "clear")
 
-def list_phone_book(phone_book):
-  for index, contact in enumerate(phone_book, start=1):
-    favorite_icon = "☆" if contact.is_favorite else ""
-    print(f"{index} - {contact} {favorite_icon}")
-  return
-
-def check_favorite_contact(phone_book, contact_index):
-  contact_index = contact_index - 1
-  if contact_index >= 0 and contact_index < len(phone_book):
-    if phone_book[contact_index].is_favorite:
-      unfavorite_contact(phone_book, contact_index)
-    else:
-      favorite_contact(phone_book, contact_index)
-  else:
-    print("Contato inexistente!")
-  return
-
-def favorite_contact(phone_book, contact_index):
-  phone_book[contact_index].is_favorite = True
-  print(f"Contato {phone_book[contact_index]} favoritado com sucesso!")
-  return
-
-def unfavorite_contact(phone_book, contact_index):
-  phone_book[contact_index].is_favorite = False
-  print(f"Contato {phone_book[contact_index]} desfavoritado com sucesso!")
-  return
-
 def list_favorites(phone_book):
   for index, contact in enumerate([item for item in phone_book if item.is_favorite]):
     print(f"{index} - {contact}")
@@ -73,11 +46,12 @@ while True:
       phone_book.list_contacts()
       wait_and_clear_screen()
     
-    # case 3:
-    #   list_phone_book(phone_book) 
-    #   contact_index = int(input("Insira o índice do contato: "))
-    #   check_favorite_contact(phone_book, contact_index)
-    #   wait_and_clear_screen()
+    case 3:
+      print("--Contatos--")
+      phone_book.list_contacts()
+      contact_index = int(input("Insira o índice do contato: "))
+      phone_book.check_favorite_contact(contact_index)
+      wait_and_clear_screen()
     
     # case 4:
     #   list_favorites(phone_book)
