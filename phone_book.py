@@ -52,10 +52,7 @@ class PhoneBook:
     print(f"Contato desfavoritado com sucesso!")      
   
   def is_out_of_bounds(self, index):
-    if index < 0 or index >= len(self.contacts):
-      return True
-    else:
-      return False  
+    return index < 0 or index >= len(self.contacts)
   
   def is_phone_book_empty(self):
     return not len(self.contacts)

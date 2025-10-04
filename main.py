@@ -45,7 +45,7 @@ while True:
       wait_and_clear_screen()
 
     case 5:
-      if (phone_book.is_phone_book_empty):
+      if (phone_book.is_phone_book_empty()):
         print("Agenda telefônica vazia!")
       else:
         phone_book.list_contacts()
