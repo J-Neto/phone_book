@@ -32,12 +32,12 @@ while True:
       wait_and_clear_screen()
     
     case 3:
-      if (phone_book.is_phone_book_empty):
+      if (phone_book.is_phone_book_empty()):
         print("Agenda telefônica vazia!")
       else:
         phone_book.list_contacts()
         contact_index = int(input("Insira o índice do contato: "))
-        phone_book.check_favorite_contact(contact_index)
+        phone_book.toggle_favorite_contact(contact_index)
       wait_and_clear_screen()
     
     case 4:

@@ -14,7 +14,7 @@ class PhoneBook:
         favorite_icon = "☆" if contact.is_favorite else ""
         print(f"{index} - {contact} {favorite_icon}")
 
-  def check_favorite_contact(self, index):
+  def toggle_favorite_contact(self, index):
     index = index - 1
     if self.is_out_of_bounds(index):
       print("Contato inexistente")
