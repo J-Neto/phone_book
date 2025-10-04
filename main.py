@@ -2,9 +2,12 @@ from contact import Contact
 from phone_book import PhoneBook
 import os
 
-def wait_and_clear_screen():
-  input("")
+def clear_screen():
   os.system('cls' if os.name == "nt" else "clear")
+
+def wait_and_clear_screen():
+  input("Pressione Enter para continuar...")
+  clear_screen()
   
 # -------------------
 phone_book = PhoneBook()
@@ -12,7 +15,7 @@ phone_book = PhoneBook()
 while True:
   print("Agenda Telefônica 🕮")
   option = int(input("1- Adicionar contato\n2- Ver contatos\n3- Favoritar/desfavoritar contato\n4- Ver favoritos\n5- Apagar contato\n6- Sair do programa\nOpção: "))
-  os.system('cls' if os.name == "nt" else "clear")
+  clear_screen()
   
   match option:
     case 1:
