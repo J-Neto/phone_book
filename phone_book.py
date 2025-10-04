@@ -27,10 +27,16 @@ class PhoneBook:
   def list_favorites(self):
     if self.is_phone_book_empty():
       print("Agenda telefônica vazia!")
-    else:
-      print("--Favoritos--")
-      for index, contact in enumerate([item for item in self.contacts if item.is_favorite]):
-        print(f"{index} - {contact}")
+      return
+    
+    favorites = [item for item in self.contacts if item.is_favorite]
+    if not favorites:
+      print("Nenhum contato favorito encontrado.")
+      return
+    
+    print("--Favoritos--")
+    for index, contact in enumerate(favorites, start=1):
+      print(f"{index} - {contact}")
       
   def delete_contact(self, index):
     if self.is_phone_book_empty():
