@@ -58,4 +58,4 @@ class PhoneBook:
       return False  
   
   def is_phone_book_empty(self):
-    return True if len(self.contacts) == 0 else False
+    return not len(self.contacts)
